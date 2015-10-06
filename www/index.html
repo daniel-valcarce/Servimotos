@@ -53,7 +53,7 @@
                                <td><input id="clave_session" type="password" required="required"></td>
                            </tr>
                            <tr>
-                               <td></td>
+                               <td><button id="boton">Otro boton</button></td>
                                <td><input id="enviar_form_inicio" type="button" onclick="Iniciar()" value="Enviar"></td>
                            </tr>
                   
@@ -73,7 +73,9 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
                   
-            
+            $("#boton").on("click", function(){
+            alert("Eder daniel");
+            });
                 function Iniciar(){
                     alert("dentramos");
                     var usuario = $("#usuario_session").val();
