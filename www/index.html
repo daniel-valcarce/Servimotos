@@ -84,7 +84,7 @@
                $("#enviar_form_inicio").on("click", function(){
               
                     var usuario_dato = $("input#usuario_session").val();
-            var clave_dato   = $("input#clave_session").val();
+                    var clave_dato   = $("input#clave_session").val();
                 if(usuario_dato===""){
                     alert("faltan valores");
                     return;
@@ -92,12 +92,13 @@
                     alert("faltan valores");
                     return;
                 }
-                                  $.ajax({
+                        $.ajax({
                         url:"http://hostinpageval.6te.net/php/Sistema.php",  
                         type:"POST",
                         dataType:"json",
                         data:{usuario:usuario_dato, clave:clave_dato, inicio_session:"session"},
                         success: function(resp){
+                            
                        if(resp["valor"]==="Registrado"){
                           window.localStorage.setItem("nombres", resp["nombres"]);
                           window.localStorage.setItem("apellidos", resp["apellidos"]);
@@ -120,6 +121,7 @@
                        }
                              }, 
                              error: function(jq, status, error){
+                                 
                                    $("input#usuario_session").val("");
                                    $("input#clave_session").val("");
                                  alert("este es el error " + error);
